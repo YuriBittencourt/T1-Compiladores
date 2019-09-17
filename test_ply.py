@@ -2,7 +2,7 @@
 from ply import lex
 from ply import yacc
 
-data = '''
+data = """\
 {
 {
   float x;
@@ -42,8 +42,8 @@ data = '''
 
   return;
 }
-}
-'''
+}\
+"""
 
 # List of token names.   This is always required
 tokens = (
@@ -81,7 +81,8 @@ t_ignore  = ' \t'
 # Error handling rule
 def t_error(t):
    print("Illegal character '%s'" % t.value[0])
-   t.lexer.skip(1)
+   print("Line: %s, Column: %s" % (t.lexer.lineno, t.lexer.lexpos))
+   # t.lexer.skip(1)
 
 # Build the lexer
 lexer = lex.lex()
