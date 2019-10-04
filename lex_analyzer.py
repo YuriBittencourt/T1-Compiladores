@@ -94,11 +94,14 @@ def t_error(t):
    #esse + 1 é para contar a partir da posição 1 e não zero
    exit(0)
 
+
 # Build the lexer
+lexer = lex.lex()
+
+
 def build_lexer(program):
-    lexer = lex.lex()
-    token_list = []
-    with open(program,'r') as target_file:
+    token_lst = []
+    with open(program, 'r') as target_file:
         for line in target_file:
             lexer.input(line)
             # Tokenize
@@ -106,8 +109,8 @@ def build_lexer(program):
                 tok = lexer.token()
                 if not tok:
                     break      # No more input
-                token_list.append(tok)
-    return token_list
+                token_lst.append(tok)
+    return token_lst
 
 
 if __name__ == "__main__":
