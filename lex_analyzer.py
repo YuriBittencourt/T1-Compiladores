@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from ply import lex
 
-
 # List of token names.   This is always required
 tokens = [
   'INT',
@@ -95,17 +94,25 @@ def t_error(t):
    #esse + 1 é para contar a partir da posição 1 e não zero
    exit(0)
 
+
 # Build the lexer
 lexer = lex.lex()
-token_list = []
-with open('examples/ex1.ccc','r') as target_file:
-    for line in target_file:
-        lexer.input(line)
-        # Tokenize
-        while True:
-            tok = lexer.token()
-            if not tok:
-                break      # No more input
-            token_list.append(tok)
 
-print(token_list)
+
+def build_lexer(program):
+    token_lst = []
+    with open(program, 'r') as target_file:
+        for line in target_file:
+            lexer.input(line)
+            # Tokenize
+            while True:
+                tok = lexer.token()
+                if not tok:
+                    break      # No more input
+                token_lst.append(tok)
+    return token_lst
+
+
+if __name__ == "__main__":
+    token_list = build_lexer('examples/ex1.ccc')
+    print([(x.type, x.value, x.lineno, x.lexpos) for x in token_list])
