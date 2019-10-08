@@ -24,8 +24,8 @@ def p_statement(p):
                  | printstat SEMICOLON
                  | readstat SEMICOLON
                  | returnstat SEMICOLON
-                 | ifstat SEMICOLON
-                 | forstat SEMICOLON
+                 | ifstat
+                 | forstat
                  | LBRACES statelist RBRACES
                  | BREAK SEMICOLON
                  | SEMICOLON
@@ -49,7 +49,7 @@ def p_types_string(p):
 
 
 def p_integer(p):
-    '''integer : LBRACKET INTCONST RBRACKET  integer
+    '''integer : LBRACKET INTCONST RBRACKET integer
             | epsilon
     '''
 
