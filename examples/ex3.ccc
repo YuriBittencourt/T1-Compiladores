@@ -1,103 +1,100 @@
 {
     {
-        {
-            {
-                {
-                    {
-                        {
-                            {
-                                {
-                                    {
-                                        {
-                                            {
-                                                {
-                                                    {
-                                                        {
-                                                            {
-                                                                {
-                                                                    {
-                                                                        {
-                                                                            {
-                                                                                {
-                                                                                    {
-                                                                                        {
-                                                                                            {
-                                                                                                {
-                                                                                                    {
-                                                                                                        {
-                                                                                                            {
-                                                                                                                {
-                                                                                                                    {
-                                                                                                                        {
-                                                                                                                            {
-                                                                                                                                {
-                                                                                                                                    {
-                                                                                                                                        {
-                                                                                                                                            {
-                                                                                                                                                {
-                                                                                                                                                    {
-                                                                                                                                                        {
-                                                                                                                                                            {
-                                                                                                                                                                {
-                                                                                                                                                                    {
-                                                                                                                                                                        {
-                                                                                                                                                                            {
-                                                                                                                                                                                {
-                                                                                                                                                                                    {
-                                                                                                                                                                                        {
-                                                                                                                                                                                            {
-                                                                                                                                                                                                {
-                                                                                                                                                                                                    {
-                                                                                                                                                                                                    int a;
-                                                                                                                                                                                                    float b;
-                                                                                                                                                                                                    string c;
-                                                                                                                                                                                                    }
-                                                                                                                                                                                                }
-                                                                                                                                                                                            }
-                                                                                                                                                                                        }
-                                                                                                                                                                                    }
-                                                                                                                                                                                }
-                                                                                                                                                                            }
-                                                                                                                                                                        }
-                                                                                                                                                                    }
-                                                                                                                                                                }
-                                                                                                                                                            }
-                                                                                                                                                        }
-                                                                                                                                                    }
-                                                                                                                                                }
-                                                                                                                                            }
-                                                                                                                                        }
-                                                                                                                                    }
-                                                                                                                                }
-                                                                                                                            }
-                                                                                                                        }
-                                                                                                                    }
-                                                                                                                }
-                                                                                                            }
-                                                                                                        }
-                                                                                                    }
-                                                                                                }
-                                                                                            }
-                                                                                        }
-                                                                                    }
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+        print "      __";
+        print " w  c(..)o   (";
+        print "  \__(-)    __)";
+        print "      /\   (";
+        print "     /(_)___)";
+        print "     w /|";
+        print "      | \";
+        print "     m  m";
+
+        print " Welcome to the system\n";
+        string monkey_name;
+        monkey_name = "Harambe";
+        print "My name is ";
+        print monkey_name;
+        print "\n";
+
+        int true;
+        true = 1;
+
+        if (monkey_name)
+            return;
+        else
+            if(true == 1)
+                break;
+            else
+                return;
+    }
+    {
+        float a;
+        float b;
+        a = 0.0;
+        b = 0.01;
+        if(a + 0.01 != b){
+            print "Not equal";
+            int m[3][3];
+        }
+        int i;
+        int j;
+        for(i = 0; i < 3; i = i + 1){
+            for(j = 0; j < 3; j = j +1){
+                m[i][j] = i * j;
             }
         }
+        if(m[4][4]){
+            print "Should have been an Array Out of Bounds Exception";
+        }
+    }
+
+    {
+        int matriz;
+        matriz = new int [3][3][3][3][3][3];
+        print "Look at these abnomalies which are valid!!!";
+        m = new int [3]
+        [3];
+        int
+        ab;
+        for(i = 0; i<m[4][4][4][4]; i = i + 1){break;}
+
+        print i;
+        print i * i;
+        print i * undeclared_var;
+
+        int _;
+
+        if(a + a + a + a + b){
+            if (a + b){
+                if(b){
+                    print "Success!";
+                }
+                else
+                    print "Fail!";
+            }
+        }
+        else
+            print "Not even close";
+    }
+
+    {
+        print "lcm";
+        int a;
+        int b;
+        if(b > a){
+            int aux;
+            aux = a;
+            a = b;
+            b = aux;
+        }
+        int i;
+        for(i = 0; i <a; i = i + 1){
+            if( a % i == 0)
+                a = a \ i;
+            if( b % i == 0)
+                b = b \ i;
+        }
+        a = a + b;
+        print a;
     }
 }
