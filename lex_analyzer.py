@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import sys
 from ply import lex
 
 # List of token names.   This is always required
@@ -114,5 +115,5 @@ def build_lexer(program):
 
 
 if __name__ == "__main__":
-    token_list = build_lexer('examples/ex1.ccc')
+    token_list = build_lexer(sys.argv[1])
     print([(x.type, x.value, x.lineno, x.lexpos) for x in token_list])

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+import sys
 import ply.yacc as yacc
 
 #importar a lista de tokens do analisador léxico
@@ -179,7 +179,7 @@ def build_parser(program):
     with open(program, 'r') as target_file:
         return parser.parse(target_file.read())
 
-token_list = build_parser('examples/ex1.ccc')
+token_list = build_parser(sys.argv[1])
 exit(0)
 
 #trecho abaixo retirado do exemplo da documentação do PLY
