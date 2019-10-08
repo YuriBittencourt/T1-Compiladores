@@ -1,0 +1,105 @@
+{
+  int i;
+  float digitSum;
+  int droot;
+  int pers;
+  int display;
+
+  {
+    pers = 0;
+
+    digitSum = 0;
+    for(value = 0; value < base; value = droot){
+      digitSum = value % base;
+      value = value \ base;
+      droot = value;
+      value = digitSum;
+    }
+  }
+
+  string result;
+  result = "";
+
+  {
+    result = digSymbol[value % base+1] + result;
+    value = value \ base;
+    display = value;
+  }
+
+  {
+    print "--- Examples in 16-Base ---";
+  }
+
+  int max_n;
+  int branch;
+  max_n = 500;
+  branch = 4;
+
+  int rooted;
+  int unrooted;
+  int c;
+  int cnt;
+  int n;
+  int sum;
+  string fmt;
+
+  {
+    int b;
+    int m;
+
+    for(b = 0; b < branch; b = b + 1){
+      sum = sum + n;
+      if(sum >= max_n){
+        break;
+      }
+    }
+  }
+
+  if (l * 2 >= sum){
+    if(b >= branch){
+      return;
+    }
+  }
+
+  if(b == (br + 1)){
+    return;
+  } else {
+    b = br - 1;
+  }
+
+  if(l * 2 < sum){
+    b = l - 2;
+    return;
+  }
+
+  if(b < branch){
+    for(m = n-1; m > 1; m = m -1){
+      print "tree(b, m, l, sum, c[br])";
+    }
+  }
+
+  if(s % 2 != 0){
+    print "mpz_add_ui(tmp, rooted[s div 2], 1)";
+    print "mpz_mul(tmp, rooted[s div 2], tmp)";
+    print "mpz_tdiv_q_2exp(tmp, tmp, 1)";
+    return;
+  }
+
+  for(n = 0; n < 1; n = n - 1){
+    print "mpz_init_set_ui(rooted[n], 1)";
+    print "mpz_init_set_ui(unrooted[n], 1)";
+    for(n = 2; n < max_n-1; n = n + 1){
+      print "mpz_init_set_ui(rooted[n], 0)";
+      print "mpz_init_set_ui(unrooted[n], 0)";
+      for(n = 0; n < branch - 1; n = n + 1){
+        print "mpz_init(c[n])";
+      }
+    }
+  }
+
+  sum = 1;
+  for(n = 1; n < max_n; n = n +1){
+    print "tree(0, n, n, sum, cnt)";
+    print n;
+  }
+}
