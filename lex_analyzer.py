@@ -4,33 +4,33 @@ from ply import lex
 
 # Lista de todos os tokens
 tokens = [
-  'INT',
-  'FLOAT',
-  'STRING',
-  'SEMICOLON',
-  'BREAK',
-  'LBRACES',
-  'RBRACES',
-  'PRINT',
-  'IDENT',
-  'RETURN',
-  'READ',
-  'IF',
-  'ELSE',
-  'FOR',
-  'NEW',
-  'RELOP',
-  'SIGNAL',
-  'UNARYOP',
-  'LBRACKET',
-  'RBRACKET',
-  'INTCONST',
-  'FLOATCONST',
-  'STRCONST',
-  'NULL',
-  'LPAREN',
-  'RPAREN',
-  'ATRIB',
+    'INT',
+    'FLOAT',
+    'STRING',
+    'SEMICOLON',
+    'BREAK',
+    'LBRACES',
+    'RBRACES',
+    'PRINT',
+    'IDENT',
+    'RETURN',
+    'READ',
+    'IF',
+    'ELSE',
+    'FOR',
+    'NEW',
+    'RELOP',
+    'SIGNAL',
+    'UNARYOP',
+    'LBRACKET',
+    'RBRACKET',
+    'INTCONST',
+    'FLOATCONST',
+    'STRCONST',
+    'NULL',
+    'LPAREN',
+    'RPAREN',
+    'ATRIB',
 ]
 
 # Palavras reservadas da linguagem
@@ -64,7 +64,8 @@ t_RPAREN = r'\)'
 t_ATRIB = r'\='
 
 
-# função especial para fazer cast dos valores dos tokens FLOATCONST e INTCONST e também definir sua expressão regular
+# função especial para fazer cast dos valores dos tokens FLOATCONST e
+# INTCONST e também definir sua expressão regular
 def t_FLOATCONST(t):
     r'[0-9]+\.[0-9]+'
     t.value = float(t.value)
@@ -78,7 +79,8 @@ def t_INTCONST(t):
 
 
 # Função especial para o token IDENT, pois precisa verificar se o token não se trata de uma palavra reservada.
-# essa é a forma que o PLY disponibiliza e encoraja para tratar essa precedência
+# essa é a forma que o PLY disponibiliza e encoraja para tratar essa
+# precedência
 def t_IDENT(t):
     r'[a-z_]([A-Za-z_0-9])*'
     t.type = reserved.get(t.value, 'IDENT')
