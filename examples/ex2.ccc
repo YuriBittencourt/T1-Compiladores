@@ -1,0 +1,101 @@
+{
+  {
+    float c;
+    float d;
+    float x;
+    int i;
+    int j;
+
+    for(i = 0; i < 100; i = i + 1) {
+      for(j = 0; j < 300; j = j + 1){
+        print i;
+        print j;
+
+        x = d * c + 100;
+        if(x >= 5000){
+          return;
+        }
+      }
+    }
+
+    if(x >= 5){
+      x = 1;
+    } else {
+      for(t = 0; t < x; t = t*t){
+        if(t % 2 == 0){
+          x = 2;
+          break;
+        }
+      }
+    }
+
+    string pt2;
+    end = "Parte 2";
+
+    int t;
+    int r;
+    float y;
+
+    t = 0;
+    r = 0;
+
+    t = x*d;
+    r = i*t;
+
+    y = new string[10];
+
+    for(i = 0; i < r + t; i = i + 1){
+      y[i] = "teste";
+    }
+
+    if(y[1] == "teste"){
+      x = 1;
+    } else {
+      x = 0;
+      t = 0;
+      r = 0;
+      y[1] = "teste";
+    }
+
+    if(y[1] == y[2]){
+      return;
+    } else {
+      print  "Erro!";
+      return;
+    }
+
+    print "Finishing...";
+
+    int g;
+    int u;
+
+    if(x == 1){
+      u = 10;
+    } else {
+      u = 50;
+    }
+
+    g = u + x;
+
+    if(g >= d){
+      if(d % 2 == 0){
+        return;
+      } else {
+        g = g\d;
+        print "Erro!";
+      }
+    }
+
+    for(iter = 0; iter > 1000; iter = iter - 1){
+      print iter;
+      for(iter2 = 0; iter < 1000; iter = iter + 1){
+        print iter;
+      }
+    }
+
+  print "~~~~~~~~~~~~";
+  print "Finished Executing";
+  print "~~~~~~~~~~~~";
+  return;
+  }
+}
