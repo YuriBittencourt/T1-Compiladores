@@ -1,0 +1,9 @@
+.PHONY: run
+
+run:
+	@echo "Verificando versã do pip..."
+	sudo pip install --upgrade pip
+	@echo "Instalando PLY..."
+	sudo pip install ply
+
+	python syntatic_analyzer.py ${FILE}
