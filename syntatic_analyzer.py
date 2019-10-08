@@ -83,7 +83,7 @@ def p_else(p):
 
 
 def p_forstat(p):
-    'forstat : FOR LPAREN atribstat SEMICOLON numexpression SEMICOLON atribstat RPAREN statement'
+    'forstat : FOR LPAREN atribstat SEMICOLON expression SEMICOLON atribstat RPAREN statement'
 
 
 def p_statelist(p):
@@ -109,7 +109,7 @@ def p_expression(p):
 
 
 def p_binaryoperator(p):
-    '''binaryoperator : relationaloperator numexpression
+    '''binaryoperator : numexpression relationaloperator
                         | epsilon
     '''
 
@@ -188,7 +188,8 @@ while True:
         s = input('calc > ')
     except EOFError:
         break
-    if not s: continue
+    if not s:
+        continue
     result = parser.parse(s)
     print(result)
 
