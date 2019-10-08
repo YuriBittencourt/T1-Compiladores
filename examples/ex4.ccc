@@ -1,0 +1,100 @@
+{
+    {
+        int sum;
+        int k;
+        int i;
+        int stepping;
+        sum = 0;
+        k = 100;
+        stepping = 2;
+        for(i = 0; i < k; i = i + stepping){
+            sum = sum + i;
+        }
+    }
+
+    {
+        int even;
+        int i;
+        int end;
+        end = 100000;
+        for(i = 0; i < end; i = i + 1){
+            if (i % 2 == 0){
+                even = i;
+                print even;
+            }
+            else
+                print "Not even";
+        }
+    }
+
+    {
+        int m[3][3][3][3];
+        int i;
+        int j;
+        int k;
+        int l;
+        for(i = 0; i < 3; i = i + 1){
+            for(j = 0; j < 3; j = j + 1){
+                for(k = 0; k < 3; k = k + 1){
+                    for(l = 0; l < 3; l = l + 1){
+                        print m[i][j][k][l];
+                    }
+                }
+            }
+        }
+    }
+
+    {
+        print "Hello World";
+        return;
+    }
+
+    {
+        int a;
+        int b;
+
+        a = 10;
+        b = 5;
+        if (a > b){
+            print "a é maior que b";
+        }
+
+        if (a < b){
+            print "b é maior que a";
+        }
+
+        if (a == b){
+            print "a é igual a b";
+        }
+
+        return;
+    }
+
+    {
+        int base;
+        int pow;
+        int res;
+        int i;
+        res = 1;
+        base = 2;
+        pow = 10;
+
+        for(i = 0; i < pow; i = i + 1)
+        {
+            res = res * base;
+        }
+    }
+
+    {
+        float pi;
+        float circumference;
+        float area;
+        float radius;
+
+        pi = 3.14;
+        radius = 2.0;
+
+        circumference = 2 * pi * radius;
+        area = pi * radius * radius;
+    }
+}

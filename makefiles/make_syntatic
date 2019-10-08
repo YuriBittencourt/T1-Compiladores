@@ -1,7 +1,7 @@
 .PHONY: run
 
 run:
-	@echo "Verificando versã do pip..."
+	@echo "Verificando versão do pip..."
 	sudo pip install --upgrade pip
 	@echo "Instalando PLY..."
 	sudo pip install ply

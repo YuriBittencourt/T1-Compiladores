@@ -2,22 +2,24 @@
 import sys
 import ply.yacc as yacc
 
-#importar a lista de tokens do analisador léxico
+# Importar a lista de tokens do analisador léxico
 from lex_analyzer import tokens
 
 
-#definir a regra inicial, por padrão o PLY irá usar a primeira regra definida
+# Define a regra inicial, por padrão o PLY irá usar a primeira regra definida
 def p_program(p):
     '''program : statement
                 | epsilon
     '''
 
 
-#definindo a regra vazia
+# Define a regra vazia
 def p_epsilon(p):
     'epsilon :'
     pass
 
+
+# Define as regras restantes da linguagem
 def p_statement(p):
     '''statement : vardecl SEMICOLON
                  | atribstat SEMICOLON
@@ -168,28 +170,23 @@ def p_lvalue(p):
     '''
 
 
-# Error rule for syntax errors
+# Função de erro para erros sintáticos
 def p_error(p):
     print("Syntax error in input!", p)
+    print("Line: %s, Column: %s" % (p.lineno, p.lexpos ))
+    exit(0)
 
 
-# Build the parser
+# Inicializa o analisador sintático
 parser = yacc.yacc()
+
+
+# Constrói o analisador sintático
 def build_parser(program):
     with open(program, 'r') as target_file:
         return parser.parse(target_file.read())
 
-token_list = build_parser(sys.argv[1])
-exit(0)
 
-#trecho abaixo retirado do exemplo da documentação do PLY
-while True:
-    try:
-        s = input('calc > ')
-    except EOFError:
-        break
-    if not s:
-        continue
-    result = parser.parse(s)
-    print(result)
-
+if __name__ == "__main__":
+    build_parser(sys.argv[1])
+    print("Success!")
