@@ -63,7 +63,6 @@ t_LPAREN = r'\('
 t_RPAREN = r'\)'
 t_ATRIB = r'\='
 
-
 # função especial para fazer cast dos valores dos tokens FLOATCONST e
 # INTCONST e também definir sua expressão regular
 def t_FLOATCONST(t):
@@ -71,12 +70,10 @@ def t_FLOATCONST(t):
     t.value = float(t.value)
     return t
 
-
 def t_INTCONST(t):
     r'\d+'
     t.value = int(t.value)
     return t
-
 
 # Função especial para o token IDENT, pois precisa verificar se o token não se trata de uma palavra reservada.
 # essa é a forma que o PLY disponibiliza e encoraja para tratar essa
@@ -86,16 +83,13 @@ def t_IDENT(t):
     t.type = reserved.get(t.value, 'IDENT')
     return t
 
-
 # Define a regra para contar os números de linha
 def t_newline(t):
     r'\n+'
     t.lexer.lineno += len(t.value)
 
-
 # String de caracteres ignorados, espaços e tabs
 t_ignore = ' \t'
-
 
 # Regra de tratamento de erro:
 # Imprime a caractere inválida, sua linha e coluna.
@@ -105,10 +99,8 @@ def t_error(t):
     # esse + 1 é para contar a partir da posição 1 e não zero
     exit(0)
 
-
 # inicializa o analisador léxico
 lexer = lex.lex()
-
 
 # constroi o análisador léxico
 def build_lexer(program):
@@ -123,7 +115,6 @@ def build_lexer(program):
                     break      # Não há mais entradas
                 token_lst.append(tok)
     return token_lst
-
 
 if __name__ == "__main__":
     token_list = build_lexer(sys.argv[1])
