@@ -9,7 +9,6 @@ global_tree = []
 
 # Define a regra inicial, por padrão o PLY irá usar a primeira regra definida
 
-
 def p_program(p):
     '''program : statement
                 | epsilon
@@ -204,14 +203,17 @@ def p_lvalue(p):
 
 # Função de erro para erros sintáticos
 def p_error(p):
-    print("Syntax error in input!", p)
+    print("Syntax error in input! Token: %s" % (p,))
     print("Line: %s, Column: %s" % (p.lineno, p.lexpos))
-    print(global_tree[-1])
 
-    for prod in parser.productions:
-        if prod.name == global_tree[-1][0]:
-            print(prod)
-            break
+    if len(global_tree) == 0:
+        print("Error production: %s" % (parser.productions[1],))
+    else:
+        print("Error production: %s" % (global_tree[-1],))
+        for prod in parser.productions:
+            if prod.name == global_tree[-1][0]:
+                print(prod)
+                break
 
     exit(1)
 
